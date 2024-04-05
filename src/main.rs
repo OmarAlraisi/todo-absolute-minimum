@@ -13,8 +13,8 @@ fn main() {
             // Full buffer
             let mut buffer: Vec<u8> = vec![];
 
+            let mut buf = [0u8; BUFFER_SIZE];
             loop {
-                let mut buf = [0u8; BUFFER_SIZE];
                 let bytes_read = reader.read(&mut buf).unwrap();
                 buffer.extend_from_slice(&buf[..bytes_read]);
 
